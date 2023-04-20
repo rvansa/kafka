@@ -571,6 +571,14 @@ public class MockClient implements KafkaClient {
     }
 
     @Override
+    public void suspend() {
+    }
+
+    @Override
+    public void resume() {
+    }
+
+    @Override
     public void close() {
         active = false;
         metadataUpdater.close();
