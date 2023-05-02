@@ -882,6 +882,7 @@ public class Sender implements Runnable, Resource {
     @Override
     public void beforeCheckpoint(Context<? extends Resource> context) throws Exception {
         checkpointPhaser = new Phaser(2);
+        client.wakeup();
         checkpointPhaser.arriveAndAwaitAdvance();
         client.suspend();
     }
